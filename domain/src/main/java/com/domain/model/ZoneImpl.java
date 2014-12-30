@@ -5,21 +5,26 @@ package com.domain.model;
  */
 public class ZoneImpl implements Zone {
     private final int zoneId;
+    private Type zoneType;
+    private float zoneValue;
 
     public ZoneImpl(int zoneId) {
         this.zoneId = zoneId;
     }
-    private float zoneRatio;
+
+    public void setZoneType(Type type) {
+        this.zoneType = type;
+    }
 
     public int getZoneId() {
         return zoneId;
     }
 
-    public float getZoneRatio() {
-        return zoneRatio;
+    public float getZoneValue() {
+        return zoneValue;
     }
 
-    public void setZoneRatio(float zoneRatio) {
-        this.zoneRatio = zoneRatio;
+    public void setZoneValue(float zoneValue) {
+        this.zoneValue = zoneValue;
     }
 }

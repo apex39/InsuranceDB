@@ -4,9 +4,9 @@ package com.domain.model;
  * Created by mateusz on 27.12.14.
  */
 public class Car implements Vehicle {
-    private final int registrationNumber;
+    private final String registrationNumber;
 
-    public Car(int registrationNumber) {
+    public Car(String registrationNumber) {
         this.registrationNumber = registrationNumber;
     }
 
@@ -15,7 +15,7 @@ public class Car implements Vehicle {
     private float capacity;
     private String vin;
 
-    public int getRegistrationNumber() {
+    public String getRegistrationNumber() {
         return registrationNumber;
     }
 
@@ -48,6 +48,10 @@ public class Car implements Vehicle {
     }
 
     public void setVin(String vin) {
-        this.vin = vin;
+        if(vin.length() == 17) {
+            this.vin = vin;
+        } else {
+            throw new IllegalArgumentException("VIN length must equal 17");
+        }
     }
 }

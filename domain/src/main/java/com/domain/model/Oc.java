@@ -4,10 +4,11 @@ import java.util.Collection;
 import java.util.Date;
 
 public class Oc {
-    private final int ocId;
+    //TODO:Change all domain's IDs from int to String
+    private final String ocId;
 
 
-    public Oc(int ocId) {
+    public Oc(String ocId) {
         this.ocId = ocId;
     }
 
@@ -22,7 +23,7 @@ public class Oc {
     private User insurer;
     private float premium;
 
-    public int getOcId() {
+    public String getOcId() {
         return ocId;
     }
 

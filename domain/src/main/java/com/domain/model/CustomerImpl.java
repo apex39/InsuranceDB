@@ -4,13 +4,13 @@ package com.domain.model;
  * Created by mateusz on 27.12.14.
  */
 public class CustomerImpl implements Customer {
-    private final int pesel;
+    private final String pesel;
 
-    public CustomerImpl(int pesel) {
+    public CustomerImpl(String pesel) {
         this.pesel = pesel;
     }
 
-    public int getPesel() {
+    public String getPesel() {
         return pesel;
     }
 
