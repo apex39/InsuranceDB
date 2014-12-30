@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="mainScreen_list">
+        <item>@string/oc</item>
+        <item>@string/clients</item>
+        <item>@string/discounts_rises</item>
+        <item>@string/zones</item>
+    </string-array>
+</resources>

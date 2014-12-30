@@ -1,0 +1,13 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <color name="holo_blue_light">#ff33b5e5</color>
+    <color name="green">#36A245</color>
+    <color name="ripple_material_light">#00000000</color>
+    <style name="AppTheme" parent="@style/Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/ripple_material_light</item>
+        <item name="colorPrimaryDark">@color/green</item>
+        <item name="colorAccent">@color/holo_blue_light</item>
+        <item name="windowActionBar">false</item>
+    </style>
+</resources>
