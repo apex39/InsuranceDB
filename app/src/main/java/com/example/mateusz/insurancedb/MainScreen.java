@@ -24,6 +24,10 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.domain.model.Oc;
+
 import static android.app.PendingIntent.getActivity;
 import static android.support.v7.app.ActionBar.OnNavigationListener;
 
@@ -31,6 +35,7 @@ import static android.support.v7.app.ActionBar.OnNavigationListener;
 public class MainScreen extends ActionBarActivity implements list.OnFragmentInteractionListener {
     DatabaseData data = new DatabaseData();
     ListsAdapter listsAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,9 +55,24 @@ public class MainScreen extends ActionBarActivity implements list.OnFragmentInte
                         }
                 );
 
+        String url = "https://insurancedb-testing9569.rhcloud.com/connectDB.php";
+        final GsonRequest gsonRequest = new GsonRequest(url, com.domain.model.Oc.class, null, new Response.Listener<Oc>() {
+
+            @Override
+            public void onResponse(Oc response) {
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+                if(volleyError != null) Log.e("MainActivity", volleyError.getMessage());
+            }
+        });
+
     }
 
     private void setListContent() {
+
         data.setData1("asd");
         data.setData2("as");
         ListView list = (ListView) findViewById(R.id.list_container);
@@ -71,7 +91,6 @@ public class MainScreen extends ActionBarActivity implements list.OnFragmentInte
         Spinner spinner = (Spinner) findViewById(R.id.menu_spinner);
         SpinnerAdapter spinnerAdapter = ArrayAdapter.createFromResource
                 (getSupportActionBar().getThemedContext(), R.array.mainScreen_list, android.R.layout.simple_spinner_dropdown_item);
-
         spinner.setAdapter(spinnerAdapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 

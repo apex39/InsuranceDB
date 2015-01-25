@@ -26,6 +26,5 @@ dependencies {
     compile 'com.google.inject:guice:4.0-beta5'
     def domainLayer = project(':domain')
     //project dependencies
-    compile domainLayer
-    compile 'com.google.code.gson:gson:2.3.1'
+    compile project(':domain')
 }
